@@ -1,6 +1,6 @@
 # MI3310-KTLT
-This is a project about orders management which is writen by C++ language 
-To run this program , you should download the CMakeTool on the laptop/pc 
+This is a project about sales management which is writen by C++ language 
+To run this program , you must download the CMakeTool on the laptop/pc 
 Next , you find the command prompt and run as adminstrator and type some syntax 
 1) cd # Link URL which you download this code
 2) mkdir build
