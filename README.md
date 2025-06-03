@@ -7,4 +7,4 @@ Next , you find the command prompt and run as adminstrator and type some syntax
 3) cd build
 4) cmake .. -G "MinGW Makefiles"
 5) cmake --build .
-Finally , you can see the folder bin which is in the folder build and click banh_management.exe to run this program
+Finally , you can see the folder bin which is in the folder build and click SalesManagement.exe to run this program
