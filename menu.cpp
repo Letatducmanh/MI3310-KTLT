@@ -51,6 +51,7 @@ void runMenu(SalesManager& manager) {
     do {
         // Vòng lặp kiểm tra hợp lệ cho main menu
         do {
+            system("cls");
             displayMainMenu();
             std::cin >> mainChoice;
             if (std::cin.fail() || mainChoice < 0 || mainChoice > 3) {
@@ -67,6 +68,7 @@ void runMenu(SalesManager& manager) {
                 do {
                     // Vòng lặp kiểm tra hợp lệ cho product menu
                     do {
+                        system("cls");
                         displayProductMenu();
                         std::cin >> subChoice;
                         if (std::cin.fail() || subChoice < 0 || subChoice > 6) {
@@ -79,21 +81,31 @@ void runMenu(SalesManager& manager) {
 
                     switch (subChoice) {
                         case 1:
+                            system("cls");
                             manager.addProduct();
                             break;
                         case 2:
+                            system("cls");
                             manager.editProduct();
+                            std::cout << "\nNhan Enter de tiep tuc...";
+                            std::cin.get();
                             break;
                         case 3:
+                            system("cls");
                             manager.deleteProduct();
                             break;
                         case 4:
+                            system("cls");
                             manager.displayAllProducts();
                             break;
                         case 5: 
+                            system("cls");
                             manager.searchProductById();
+                            std::cout << "\nNhan Enter de tiep tuc...";
+                            std::cin.get();
                             break;
                         case 6: 
+                            system("cls");
                             char filename[100];
                             std::cout << "Nhap ten file can import: ";
                             std::cin >> filename;
@@ -103,7 +115,7 @@ void runMenu(SalesManager& manager) {
                         case 0:
                             break;
                     }
-                    if (subChoice != 0) {
+                    if (subChoice != 0 && subChoice != 2 && subChoice != 5) {
                         std::cout << "\nNhan Enter de tiep tuc...";
                         manager.clearInputBuffer();
                         std::cin.get();
@@ -116,6 +128,7 @@ void runMenu(SalesManager& manager) {
                 do {
                     // Vòng lặp kiểm tra hợp lệ cho invoice menu
                     do {
+                        system("cls");
                         displayInvoiceMenu();
                         std::cin >> subChoice;
                         if (std::cin.fail() || subChoice < 0 || subChoice > 3) {
@@ -128,12 +141,15 @@ void runMenu(SalesManager& manager) {
 
                     switch (subChoice) {
                         case 1:
+                            system("cls");
                             manager.createInvoice();
                             break;
                         case 2:
+                            system("cls");
                             manager.displayAllInvoices();
                             break;
                         case 3: {
+                            system("cls");
                             char id[20];
                             std::cout << "Nhap ma hoa don: ";
                             std::cin >> id;
@@ -156,6 +172,7 @@ void runMenu(SalesManager& manager) {
                 do {
                     // Vòng lặp kiểm tra hợp lệ cho statistic menu
                     do {
+                        system("cls");
                         displayStatisticMenu();
                         std::cin >> subChoice;
                         if (std::cin.fail() || subChoice < 0 || subChoice > 3) {
@@ -168,19 +185,26 @@ void runMenu(SalesManager& manager) {
 
                     switch (subChoice) {
                         case 1:
+                            system("cls");
                             manager.displayRevenueByDate();
+                            std::cout << "\nNhan Enter de tiep tuc...";
+                            std::cin.get();
                             break;
                         case 2:
+                            system("cls");
                             manager.displayRevenueByMonth();
+                            std::cout << "\nNhan Enter de tiep tuc...";
+                            std::cin.get();
                             break;
                         case 3:
+                            system("cls");
                             std::cout << "\nTong doanh thu: " << std::fixed << std::setprecision(2)
                                       << manager.calculateTotalRevenue() << " VND" << std::endl;
                             break;
                         case 0:
                             break;
                     }
-                    if (subChoice != 0) {
+                    if (subChoice != 0 && subChoice != 1 && subChoice != 2) {
                         std::cout << "\nNhan Enter de tiep tuc...";
                         manager.clearInputBuffer();
                         std::cin.get();
