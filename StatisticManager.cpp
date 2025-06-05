@@ -266,8 +266,52 @@ void SalesManager::calculateTotalRevenueByMonthMenu() const {
             std::cout << "\nTong doanh thu thang " << month << "/" << year << ": "
                       << std::fixed << std::setprecision(2) << total << " VND" << std::endl;
             std::cout << "So hoa don trong thang: " << invoiceCountByMonth << std::endl;
+
+            // Thống kê doanh thu theo ngày
+            char dayList[31][11] = {0}; // dd/mm/yyyy, tối đa 31 ngày
+            int invoiceCountByDay[31] = {0};
+            double revenueByDay[31] = {0.0};
+            int uniqueDayCount = 0;
+
+            for (int i = 0; i < invoiceCount; i++) {
+                const char* date = invoices[i].getDate();
+                int invMonth = (date[3] - '0') * 10 + (date[4] - '0');
+                int invYear = atoi(date + 6);
+                if (invMonth == month && invYear == year) {
+                    // Kiểm tra ngày đã có trong dayList chưa
+                    bool found = false;
+                    for (int d = 0; d < uniqueDayCount; d++) {
+                        if (strncmp(dayList[d], date, 10) == 0) {
+                            invoiceCountByDay[d]++;
+                            revenueByDay[d] += invoices[i].getTotalAmount();
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found && uniqueDayCount < 31) {
+                        strncpy(dayList[uniqueDayCount], date, 10);
+                        dayList[uniqueDayCount][10] = '\0';
+                        invoiceCountByDay[uniqueDayCount] = 1;
+                        revenueByDay[uniqueDayCount] = invoices[i].getTotalAmount();
+                        uniqueDayCount++;
+                    }
+                }
+            }
+
+            // In bảng doanh thu theo ngày
+            std::cout << "\n=== DOANH THU THEO NGAY TRONG THANG " << month << "/" << year << " ===" << std::endl;
+            std::cout << std::left << std::setw(15) << "Ngay"
+                      << std::setw(20) << "So hoa don"
+                      << std::setw(20) << "Doanh thu" << std::endl;
+            std::cout << "-------------------------------------------------------" << std::endl;
+            for (int d = 0; d < uniqueDayCount; d++) {
+                std::cout << std::left << std::setw(15) << dayList[d]
+                          << std::setw(20) << invoiceCountByDay[d]
+                          << std::setw(20) << std::fixed << std::setprecision(2) << revenueByDay[d] << std::endl;
+            }
             break;
-        } else {
+        } 
+        else {
             std::cout << "Khong ton tai du lieu doanh thu cho thang/nam nay!" << std::endl;
             std::cout << "Ban co muon tiep tuc su dung chuc nang nay khong? (y/n): ";
             char choice;
@@ -309,16 +353,22 @@ void SalesManager::calculateTotalRevenueByYearMenu() const {
             continue;
         }
 
-        // Đếm số hóa đơn hợp lệ
+        // Đếm số hóa đơn hợp lệ và doanh thu từng tháng
         int invoiceCountByYear = 0;
         double total = 0.0;
+        int invoiceCountByMonth[12] = {0};
+        double revenueByMonth[12] = {0.0};
+
         for (int i = 0; i < invoiceCount; i++) {
             const char* date = invoices[i].getDate();
-            if (strlen(date) >=10) {
+            if (strlen(date) >= 10) {
+                int invMonth = (date[3] - '0') * 10 + (date[4] - '0');
                 int invYear = atoi(date + 6);
-                if (invYear == year) {
+                if (invYear == year && invMonth >= 1 && invMonth <= 12) {
                     total += invoices[i].getTotalAmount();
                     invoiceCountByYear++;
+                    invoiceCountByMonth[invMonth - 1]++;
+                    revenueByMonth[invMonth - 1] += invoices[i].getTotalAmount();
                 }
             }
         }
@@ -327,6 +377,20 @@ void SalesManager::calculateTotalRevenueByYearMenu() const {
             std::cout << "\nTong doanh thu nam " << year << ": "
                       << std::fixed << std::setprecision(2) << total << " VND" << std::endl;
             std::cout << "So hoa don trong nam: " << invoiceCountByYear << std::endl;
+
+            // In bảng doanh thu theo tháng
+            std::cout << "\n=== DOANH THU THEO THANG TRONG NAM " << year << " ===" << std::endl;
+            std::cout << std::left << std::setw(10) << "Thang"
+                      << std::setw(20) << "So hoa don"
+                      << std::setw(20) << "Doanh thu" << std::endl;
+            std::cout << "-------------------------------------------------------" << std::endl;
+            for (int m = 0; m < 12; m++) {
+                if (invoiceCountByMonth[m] > 0) {
+                    std::cout << std::left << std::setw(10) << (m + 1)
+                              << std::setw(20) << invoiceCountByMonth[m]
+                              << std::setw(20) << std::fixed << std::setprecision(2) << revenueByMonth[m] << std::endl;
+                }
+            }
             break;
         } else {
             std::cout << "Khong ton tai du lieu doanh thu cho nam nay!" << std::endl;
