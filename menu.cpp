@@ -37,17 +37,17 @@ void displayInvoiceMenu() {
 
 void displayStatisticMenu() {
     std::cout << "\n=============== BAO CAO THONG KE ===============" << std::endl;
-    std::cout << "1. Thong ke doanh thu theo ngay" << std::endl;
+    std::cout << "1. Tong doanh thu " << std::endl;
     std::cout << "2. Thong ke doanh thu theo san pham" << std::endl;
-    std::cout << "3. Tong doanh thu" << std::endl;
     std::cout << "0. Quay lai" << std::endl;
     std::cout << "Lua chon cua ban: ";
 }
 
 void displayCalculateMenu () {
     std::cout << "\n=============== TONG DOANH THU ===============" << std::endl;
-    std::cout << "1. Tong doanh thu theo thang\n" ;
-    std::cout << "2. Tong doanh thu theo nam\n" ;
+    std::cout << "1. Tong doanh thu theo ngay\n" ;
+    std::cout << "2. Tong doanh thu theo thang\n" ;
+    std::cout << "3. Tong doanh thu theo nam\n" ;
     std::cout << "0. Quay lai\n" ;
     std::cout << "Lua chon cua ban: ";
 }
@@ -224,19 +224,13 @@ void runMenu(SalesManager& manager) {
                     } while (true);
 
                     switch (subChoice) {
-                        case 1:
-                            system("cls");
-                            manager.displayRevenueByDate();
-                            std::cout << "\nNhan Enter de tiep tuc...";
-                            std::cin.get();
-                            break;
                         case 2:
                             system("cls");
                             manager.displayRevenueByMonth();
                             std::cout << "\nNhan Enter de tiep tuc...";
                             std::cin.get();
                             break;
-                        case 3: {
+                        case 1: {
                             int choice;
                             do {
                                 system("cls");
@@ -246,9 +240,15 @@ void runMenu(SalesManager& manager) {
                                 switch (choice) {
                                     case 1:
                                         system("cls");
-                                        manager.calculateTotalRevenueByMonthMenu();
+                                        manager.displayRevenueByDate();
+                                        std::cout << "\nNhan Enter de tiep tuc...";
+                                        std::cin.get();
                                         break;
                                     case 2:
+                                        system("cls");
+                                        manager.calculateTotalRevenueByMonthMenu();
+                                        break;
+                                    case 3:
                                         system("cls");
                                         manager.calculateTotalRevenueByYearMenu();
                                         break;
@@ -258,7 +258,7 @@ void runMenu(SalesManager& manager) {
                                         std::cout << "Lua chon khong hop le!" << std::endl;
                                         break;
                                 }
-                                if (choice != 0) {
+                                if (choice != 0 && choice != 1) {
                                     std::cout << "\nNhan Enter de tiep tuc...";
                                     std::cin.get();
                                 }
@@ -269,7 +269,7 @@ void runMenu(SalesManager& manager) {
                         case 0:
                             break;
                     }
-                    if (subChoice != 0 && subChoice != 1 && subChoice != 2) {
+                    if (subChoice != 0 && subChoice != 2) {
                         std::cout << "\nNhan Enter de tiep tuc...";
                         std::cin.get();
                     }
