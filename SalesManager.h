@@ -33,7 +33,7 @@ public:
     void displayAllProducts() const;
     void searchProductById() const;
     void importProductsFromFile(const char* filename);  
-    Product* findProductById(const char* id);
+    Product* findProductById(const char* id) const ;
     
     // Invoice management
     void createInvoice();
