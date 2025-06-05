@@ -44,7 +44,9 @@ public:
     // Statistics
     void displayRevenueByDate() const;
     void displayRevenueByMonth() const;
-    double calculateTotalRevenue() const;
+    double calculateTotalRevenue(int month, int year) const;
+    void calculateTotalRevenueByMonthMenu() const;
+    void calculateTotalRevenueByYearMenu() const;
     
     // File operations
     void saveProductsToFile() const;
