@@ -193,10 +193,137 @@ void SalesManager::displayRevenueByMonth() const {
     }
 }
 
-double SalesManager::calculateTotalRevenue() const {
+double SalesManager::calculateTotalRevenue(int month, int year) const {
     double total = 0.0;
     for (int i = 0; i < invoiceCount; i++) {
-        total += invoices[i].getTotalAmount();
+        // Giả sử invoices[i].getDate() trả về "dd/mm/yyyy"
+        const char* date = invoices[i].getDate();
+        int invMonth = (date[3] - '0') * 10 + (date[4] - '0');
+        int invYear = atoi(date + 6);
+        if ((month == 0 || invMonth == month) && invYear == year) {
+            total += invoices[i].getTotalAmount();
+        }
     }
     return total;
+}
+
+void SalesManager::calculateTotalRevenueByMonthMenu() const {
+    if (invoiceCount == 0) {
+        std::cout << "\nKhong co du lieu hoa don!" << std::endl;
+        return;
+    }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ đệm
+
+    while (true) {
+        char inputMonthYear[20];
+        std::cout << "Nhap thang/nam muon tinh tong doanh thu (mm/yyyy): ";
+        std::cin.getline(inputMonthYear, 20);
+
+        // Kiểm tra định dạng mm/yyyy
+        if (strlen(inputMonthYear) != 7 || inputMonthYear[2] != '/' ||
+            !isdigit(inputMonthYear[0]) || !isdigit(inputMonthYear[1]) ||
+            !isdigit(inputMonthYear[3]) || !isdigit(inputMonthYear[4]) ||
+            !isdigit(inputMonthYear[5]) || !isdigit(inputMonthYear[6])) {
+            std::cout << "Dinh dang thang/nam khong hop le! Vui long nhap lai (mm/yyyy)." << std::endl;
+            continue;
+        }
+
+        int month = atoi(inputMonthYear);
+        int year = atoi(inputMonthYear + 3);
+
+        if (month < 1 || month > 12 || year < 1000 || year > 9999) {
+            std::cout << "Thang hoac nam khong hop le! Vui long nhap lai (mm/yyyy)." << std::endl;
+            continue;
+        }
+
+        // Đếm số hóa đơn hợp lệ
+        int invoiceCountByMonth = 0;
+        double total = 0.0;
+        for (int i = 0; i < invoiceCount; i++) {
+            const char* date = invoices[i].getDate();
+            int invMonth = (date[3] - '0') * 10 + (date[4] - '0');
+            int invYear = atoi(date + 6);
+            if (invMonth == month && invYear == year) {
+                total += invoices[i].getTotalAmount();
+                invoiceCountByMonth++;
+            }
+        }
+
+        if (total > 0) {
+            std::cout << "\nTong doanh thu thang " << month << "/" << year << ": "
+                      << std::fixed << std::setprecision(2) << total << " VND" << std::endl;
+            std::cout << "So hoa don trong thang: " << invoiceCountByMonth << std::endl;
+            break;
+        } else {
+            std::cout << "Khong ton tai du lieu doanh thu cho thang/nam nay!" << std::endl;
+            std::cout << "Ban co muon tiep tuc su dung chuc nang nay khong? (y/n): ";
+            char choice;
+            std::cin >> choice;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            if (choice == 'y' || choice == 'Y') {
+                continue;
+            } else {
+                break;
+            }
+        }
+    }
+}
+
+
+void SalesManager::calculateTotalRevenueByYearMenu() const {
+    if (invoiceCount == 0) {
+        std::cout << "\nKhong co du lieu hoa don!" << std::endl;
+        return;
+    }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ đệm
+
+    while (true) {
+        char inputYear[10];
+        std::cout << "Nhap nam muon tinh tong doanh thu (yyyy): ";
+        std::cin.getline(inputYear, 10);
+
+        // Kiểm tra định dạng yyyy
+        if (strlen(inputYear) != 4 ||
+            !isdigit(inputYear[0]) || !isdigit(inputYear[1]) ||
+            !isdigit(inputYear[2]) || !isdigit(inputYear[3])) {
+            std::cout << "Dinh dang nam khong hop le! Vui long nhap lai (yyyy)." << std::endl;
+            continue;
+        }
+
+        int year = atoi(inputYear);
+        if (year < 1000 || year > 9999) {
+            std::cout << "Nam khong hop le! Vui long nhap lai (yyyy)." << std::endl;
+            continue;
+        }
+
+        // Đếm số hóa đơn hợp lệ
+        int invoiceCountByYear = 0;
+        double total = 0.0;
+        for (int i = 0; i < invoiceCount; i++) {
+            const char* date = invoices[i].getDate();
+            int invYear = atoi(date + 6);
+            if (invYear == year) {
+                total += invoices[i].getTotalAmount();
+                invoiceCountByYear++;
+            }
+        }
+
+        if (total > 0) {
+            std::cout << "\nTong doanh thu nam " << year << ": "
+                      << std::fixed << std::setprecision(2) << total << " VND" << std::endl;
+            std::cout << "So hoa don trong nam: " << invoiceCountByYear << std::endl;
+            break;
+        } else {
+            std::cout << "Khong ton tai du lieu doanh thu cho nam nay!" << std::endl;
+            std::cout << "Ban co muon tiep tuc su dung chuc nang nay khong? (y/n): ";
+            char choice;
+            std::cin >> choice;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            if (choice == 'y' || choice == 'Y') {
+                continue;
+            } else {
+                break;
+            }
+        }
+    }
 }
