@@ -2,6 +2,7 @@
 #include "SalesManager.h"
 #include <iostream>
 #include <iomanip>
+#include <limits> 
 
 void displayMainMenu() {
     std::cout << "\n=============== QUAN LY HOA DON BAN HANG ===============" << std::endl;
@@ -40,6 +41,14 @@ void displayStatisticMenu() {
     std::cout << "2. Thong ke doanh thu theo san pham" << std::endl;
     std::cout << "3. Tong doanh thu" << std::endl;
     std::cout << "0. Quay lai" << std::endl;
+    std::cout << "Lua chon cua ban: ";
+}
+
+void displayCalculateMenu () {
+    std::cout << "\n=============== TONG DOANH THU ===============" << std::endl;
+    std::cout << "1. Tong doanh thu theo thang\n";
+    std::cout << "2. Tong doanh thu theo nam\n";
+    std::cout << "0. Quay lai\n";
     std::cout << "Lua chon cua ban: ";
 }
 
@@ -196,17 +205,41 @@ void runMenu(SalesManager& manager) {
                             std::cout << "\nNhan Enter de tiep tuc...";
                             std::cin.get();
                             break;
-                        case 3:
-                            system("cls");
-                            std::cout << "\nTong doanh thu: " << std::fixed << std::setprecision(2)
-                                      << manager.calculateTotalRevenue() << " VND" << std::endl;
+                        case 3: {
+                            int choice;
+                            do {
+                                system("cls");
+                                displayCalculateMenu();
+                                std::cin >> choice;
+
+                                switch (choice) {
+                                    case 1:
+                                        system("cls");
+                                        manager.calculateTotalRevenueByMonthMenu();
+                                        break;
+                                    case 2:
+                                        system("cls");
+                                        manager.calculateTotalRevenueByYearMenu();
+                                        break;
+                                    case 0:
+                                        break;
+                                    default:
+                                        std::cout << "Lua chon khong hop le!" << std::endl;
+                                        break;
+                                }
+                                if (choice != 0) {
+                                    std::cout << "\nNhan Enter de tiep tuc...";
+                                    std::cin.get();
+                                }
+                            } 
+                            while (choice != 0);
                             break;
+                        }
                         case 0:
                             break;
                     }
                     if (subChoice != 0 && subChoice != 1 && subChoice != 2) {
                         std::cout << "\nNhan Enter de tiep tuc...";
-                        manager.clearInputBuffer();
                         std::cin.get();
                     }
                 } while (subChoice != 0);
