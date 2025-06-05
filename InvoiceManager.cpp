@@ -4,6 +4,7 @@
 #include <sstream>
 #include <limits> 
 #include <algorithm>
+#include <ctime> 
 
 // Invoice management
 void SalesManager::createInvoice() {
@@ -51,21 +52,24 @@ void SalesManager::createInvoice() {
 
     // Nhập ngày lập hóa đơn
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ đệm
-    char date[20];
+    char date[40];
     do {
         std::cout << "Nhap ngay lap hoa don (dd/mm/yyyy): ";
         std::cin.getline(date, 20);
 
         // Kiểm tra định dạng: độ dài 10, ký tự thứ 3 và 6 là '/'
         if (strlen(date) == 10 && date[2] == '/' && date[5] == '/') {
-            // Có thể kiểm tra thêm ngày, tháng, năm là số nếu muốn
+            // Lấy thời gian hiện tại
+            time_t now = time(0);
+            tm* ltm = localtime(&now);
+            char timeStr[15];
+            sprintf(timeStr, " %02d:%02d:%02d", ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+            strcat(date, timeStr);
             break;
         } else {
             std::cout << "Dinh dang ngay khong hop le! Vui long nhap lai (dd/mm/yyyy)." << std::endl;
         }
     } while (true);
-    // Sử dụng tên khách hàng mặc định
-    // const char* defaultCustomerName = "Khach hang vang lai";
 
     // Khởi tạo hóa đơn với mã hóa đơn, tên khách hàng và ngày nhập
     invoices[invoiceCount] = Invoice(invoiceId, date);
@@ -154,14 +158,14 @@ void SalesManager::displayAllInvoices() const {
     std::cout << "\n=== DANH SACH HOA DON ===" << std::endl;
     std::cout << std::left << std::setw(15) << "Ma hoa don"
               // << std::setw(25) << "Khach hang"
-              << std::setw(15) << "Ngay lap"
+              << std::setw(25) << "Ngay lap"
               << std::setw(15) << "Tong tien" << std::endl;
     std::cout << "--------------------------------------------------------------------" << std::endl;
     
     for (int i = 0; i < invoiceCount; i++) {
         std::cout << std::left << std::setw(15) << invoices[i].getInvoiceId()
                   // << std::setw(25) << invoices[i].getCustomerName()
-                  << std::setw(15) << invoices[i].getDate()
+                  << std::setw(25) << invoices[i].getDate()
                   << std::setw(15) << std::fixed << std::setprecision(2) 
                   << invoices[i].getTotalAmount() << std::endl;
     }
