@@ -28,7 +28,8 @@ void SalesManager::displayRevenueByDate() const {
         double revenueByDate = 0.0;
 
         for (int i = 0; i < invoiceCount; i++) {
-            if (strcmp(invoices[i].getDate(), inputDate) == 0) {
+            // so sánh 10 ký tự đầu (dd/mm/yyyy) 
+            if (strncmp(invoices[i].getDate(), inputDate, 10) == 0) {
                 invoiceCountByDate++;
                 revenueByDate += invoices[i].getTotalAmount();
             }
@@ -108,7 +109,7 @@ void SalesManager::displayRevenueByMonth() const {
         for (int i = 0; i < invoiceCount; i++) {
             const char* date = invoices[i].getDate(); // dd/mm/yyyy
             // Kiểm tra định dạng ngày hợp lệ
-            if (strlen(date) == 10 && date[2] == '/' && date[5] == '/') {
+            if (strlen(date) >= 10 && date[2] == '/' && date[5] == '/') {
                 // So sánh tháng/năm của hóa đơn với fixedMonthYear
                 if (strncmp(date + 3, fixedMonthYear, 7) == 0) {
                     hasData = true;
@@ -301,10 +302,12 @@ void SalesManager::calculateTotalRevenueByYearMenu() const {
         double total = 0.0;
         for (int i = 0; i < invoiceCount; i++) {
             const char* date = invoices[i].getDate();
-            int invYear = atoi(date + 6);
-            if (invYear == year) {
-                total += invoices[i].getTotalAmount();
-                invoiceCountByYear++;
+            if (strlen(date) >=10) {
+                int invYear = atoi(date + 6);
+                if (invYear == year) {
+                    total += invoices[i].getTotalAmount();
+                    invoiceCountByYear++;
+                }
             }
         }
 
