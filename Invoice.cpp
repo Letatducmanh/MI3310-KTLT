@@ -173,7 +173,6 @@ void Invoice::clearItems() {
 void Invoice::displayInvoice() const {
     std::cout << "\n=================== HOA DON ===================" << std::endl;
     std::cout << "Ma hoa don: " << invoiceId << std::endl;
-    // std::cout << "Khach hang: " << customerName << std::endl;
     std::cout << "Ngay lap: " << date << std::endl;
     std::cout << "===============================================" << std::endl;
     std::cout << std::left << std::setw(10) << "Ma SP"
@@ -184,7 +183,14 @@ void Invoice::displayInvoice() const {
     std::cout << "-----------------------------------------------" << std::endl;
     
     for (int i = 0; i < itemCount; i++) {
-        items[i].displayOrderItem();
+        // Lấy thông tin từ chính OrderItem đã lưu
+        const Product& prod = items[i].getProduct();
+        std::cout << std::left << std::setw(10) << prod.getProductId()
+                  << std::setw(25) << prod.getProductName()
+                  << std::setw(10) << items[i].getQuantity()
+                  << std::setw(15) << std::fixed << std::setprecision(2) << prod.getPrice()
+                  << std::setw(15) << std::fixed << std::setprecision(2) << items[i].getTotalPrice()
+                  << std::endl;
     }
     
     std::cout << "-----------------------------------------------" << std::endl;
