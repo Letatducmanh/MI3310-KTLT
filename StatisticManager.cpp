@@ -140,14 +140,21 @@ void SalesManager::displayRevenueByMonth() const {
             }
         }
 
-        // Sắp xếp giảm dần theo số lượng bán ra
+        // Sắp xếp: trạng thái "con" lên trước, "xoa" xuống sau, trong cùng trạng thái thì số lượng bán ra giảm dần
         for (int i = 0; i < uniqueProductCount - 1; i++) {
             for (int j = i + 1; j < uniqueProductCount; j++) {
-                if (productQuantities[i] < productQuantities[j]) {
+                bool status_i = (findProductById(productIds[i]) != nullptr); // true = còn
+                bool status_j = (findProductById(productIds[j]) != nullptr); // true = còn
+
+                // Ưu tiên trạng thái "con" lên trước, nếu cùng trạng thái thì số lượng bán ra giảm dần
+                if (status_i < status_j ||
+                   (status_i == status_j && productQuantities[i] < productQuantities[j])) {
                     // Hoán đổi số lượng
                     std::swap(productQuantities[i], productQuantities[j]);
                     // Hoán đổi doanh thu
                     std::swap(productRevenues[i], productRevenues[j]);
+                    // Hoán đổi đơn giá
+                    std::swap(productPrices[i], productPrices[j]);
                     // Hoán đổi mã sản phẩm
                     char tempId[20], tempName[100];
                     strcpy(tempId, productIds[i]);
@@ -161,23 +168,28 @@ void SalesManager::displayRevenueByMonth() const {
             }
         }
 
+
         if (hasData) {
             std::cout << "\n=== DANH SACH SAN PHAM BAN RA TRONG THANG " << fixedMonthYear << " ===" << std::endl;
             std::cout << std::left << std::setw(10) << "Ma SP"
                       << std::setw(25) << "Ten SP"
                       << std::setw(15) << "So luong ban"
                       << std::setw(15) << "Don gia"
-                      << std::setw(20) << "Doanh thu" << std::endl;
-            std::cout << "--------------------------------------------------------------------" << std::endl;
+                      << std::setw(20) << "Doanh thu" 
+                      << std::setw(10) << "Trang thai" << std::endl;
+            std::cout << "------------------------------------------------------------------------------------------------" << std::endl;
 
             for (int i = 0; i < uniqueProductCount; i++) {
+                // Kiểm tra trạng thái sản phẩm 
+                const char* status = (findProductById(productIds[i]) != nullptr) ? "con" : "xoa" ; 
                 std::cout << std::left << std::setw(10) << productIds[i]
                           << std::setw(25) << productNames[i]
                           << std::setw(15) << productQuantities[i]
                           << std::setw(15) << std::fixed << std::setprecision(2) << productPrices[i]
-                          << std::setw(20) << std::fixed << std::setprecision(2) << productRevenues[i] << std::endl;
+                          << std::setw(20) << std::fixed << std::setprecision(2) << productRevenues[i] 
+                          << std::setw(10) << status << std::endl;
             }
-            std::cout << "--------------------------------------------------------------------" << std::endl;
+            std::cout << "------------------------------------------------------------------------------------------------" << std::endl;
             break; // Thoát khi đã in dữ liệu
         } else {
             std::cout << "Khong co san pham nao duoc ban trong thang/nam nay!" << std::endl;
