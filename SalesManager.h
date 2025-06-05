@@ -32,6 +32,7 @@ public:
     void deleteProduct();
     void displayAllProducts() const;
     void searchProductById() const;
+    void searchProductByName() const;
     void importProductsFromFile(const char* filename);  
     Product* findProductById(const char* id) const ;
     
