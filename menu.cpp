@@ -20,7 +20,7 @@ void displayProductMenu() {
     std::cout << "2. Sua san pham" << std::endl;
     std::cout << "3. Xoa san pham" << std::endl;
     std::cout << "4. Hien thi danh sach san pham" << std::endl;
-    std::cout << "5. Tim kiem san pham theo ID san pham" << std::endl;
+    std::cout << "5. Tim kiem san pham " << std::endl;
     std::cout << "6. Doc du lieu tu ben ngoai de them san pham" << std::endl;
     std::cout << "0. Quay lai" << std::endl;
     std::cout << "Lua chon cua ban: ";
@@ -46,9 +46,17 @@ void displayStatisticMenu() {
 
 void displayCalculateMenu () {
     std::cout << "\n=============== TONG DOANH THU ===============" << std::endl;
-    std::cout << "1. Tong doanh thu theo thang\n";
-    std::cout << "2. Tong doanh thu theo nam\n";
-    std::cout << "0. Quay lai\n";
+    std::cout << "1. Tong doanh thu theo thang\n" ;
+    std::cout << "2. Tong doanh thu theo nam\n" ;
+    std::cout << "0. Quay lai\n" ;
+    std::cout << "Lua chon cua ban: ";
+}
+
+void displaySearchMenu () {
+    std::cout << "\n=============== TIM KIEM SAN PHAM ===============" << std::endl;
+    std::cout << "1. Tim kiem theo ten san pham\n" ; 
+    std::cout << "2. Tim kiem theo Id san pham\n"; 
+    std::cout << "0. Quay lai" << std::endl;
     std::cout << "Lua chon cua ban: ";
 }
 
@@ -107,12 +115,35 @@ void runMenu(SalesManager& manager) {
                             system("cls");
                             manager.displayAllProducts();
                             break;
-                        case 5: 
-                            system("cls");
-                            manager.searchProductById();
-                            std::cout << "\nNhan Enter de tiep tuc...";
-                            std::cin.get();
+                        case 5: {
+                            int searchChoice;
+                            do {
+                                system("cls");
+                                displaySearchMenu();
+                                std::cin >> searchChoice;
+                                manager.clearInputBuffer();
+                                switch (searchChoice) {
+                                    case 1:
+                                        system("cls");
+                                        manager.searchProductByName();
+                                        std::cout << "\nNhan Enter de tiep tuc...";
+                                        std::cin.get();
+                                        break;
+                                    case 2:
+                                        system("cls");
+                                        manager.searchProductById();
+                                        std::cout << "\nNhan Enter de tiep tuc...";
+                                        std::cin.get();
+                                        break;
+                                    case 0:
+                                        break;
+                                    default:
+                                        std::cout << "Lua chon khong hop le! Vui long chon lai.\n";
+                                        break;
+                                }
+                            } while (searchChoice != 0);
                             break;
+                        }
                         case 6: 
                             system("cls");
                             char filename[100];
