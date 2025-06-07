@@ -31,7 +31,6 @@ void SalesManager::editProduct() {
         }
     } while (product == nullptr);
 
-    // XÓA BỘ ĐỆM NGAY SAU KHI NHẬP MÃ SẢN PHẨM
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << "\n === THONG TIN HIEN TAI: ===" << std::endl;
@@ -164,7 +163,7 @@ void SalesManager::displayAllProducts() const {
     std::cout << std::endl;
 }
 
-Product* SalesManager::findProductById(const char* id) {
+Product* SalesManager::findProductById(const char* id) const {
     for (int i = 0; i < productCount; i++) {
         if (strcmp(products[i].getProductId(), id) == 0) {
             return &products[i];
@@ -178,7 +177,7 @@ void SalesManager::searchProductById() const {
         char id[20];
         std::cout << "\nNhap ma san pham can tim: ";
         std::cin >> id;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ đệm
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
 
         bool found = false;
         for (int i = 0; i < productCount; i++) {
@@ -210,6 +209,49 @@ void SalesManager::searchProductById() const {
         else {
             break;
         }    
+    }
+}
+
+void SalesManager::searchProductByName() const {
+    while (true) {
+        std::string name;
+        std::cout << "\nNhap ten san pham can tim: ";
+        std::getline(std::cin, name);
+
+        bool found = false;
+        std::cout << "\n=== KET QUA TIM KIEM ===" << std::endl;
+        std::cout << std::left << std::setw(10) << "Ma SP"
+                  << std::setw(25) << "Ten SP"
+                  << std::setw(10) << "Don vi"
+                  << std::setw(15) << "Don gia"
+                  << std::setw(15) << "So luong" << std::endl;
+        std::cout << "------------------------------------------------------------" << std::endl;
+
+        for (int i = 0; i < productCount; i++) {
+            std::string prodName = products[i].getProductName();
+            // So sánh không phân biệt hoa thường
+            std::string prodNameLower = prodName, nameLower = name;
+            std::transform(prodNameLower.begin(), prodNameLower.end(), prodNameLower.begin(), ::tolower);
+            std::transform(nameLower.begin(), nameLower.end(), nameLower.begin(), ::tolower);
+
+            if (prodNameLower.find(nameLower) != std::string::npos) {
+                products[i].displayProduct();
+                found = true;
+            }
+        }
+
+        if (!found) {
+            std::cout << "Khong tim thay san pham voi ten: " << name << std::endl;
+            std::cout << "Ban co muon tiep tuc tim kiem khong? (y/n): ";
+            char choice;
+            std::cin >> choice;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            if (choice != 'y' && choice != 'Y') break;
+        }
+        else {
+            break;
+        }
+        
     }
 }
 

@@ -1,0 +1,9 @@
+456,keo ben tre,tui,20000,20
+123,keo socola,bich,10000,20
+890,sua,hop,10000,30
+901,tra sua,coc,20000,20
+902,banh oreo,tui,20000,30
+903,coca,chai,10000,30
+904,bia hoi,lon,10000,30
+905,7up,lon,10000,30
+906,fanta,chai,10000,40

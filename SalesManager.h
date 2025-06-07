@@ -32,8 +32,9 @@ public:
     void deleteProduct();
     void displayAllProducts() const;
     void searchProductById() const;
+    void searchProductByName() const;
     void importProductsFromFile(const char* filename);  
-    Product* findProductById(const char* id);
+    Product* findProductById(const char* id) const ;
     
     // Invoice management
     void createInvoice();
@@ -44,7 +45,9 @@ public:
     // Statistics
     void displayRevenueByDate() const;
     void displayRevenueByMonth() const;
-    double calculateTotalRevenue() const;
+    double calculateTotalRevenue(int month, int year) const;
+    void calculateTotalRevenueByMonthMenu() const;
+    void calculateTotalRevenueByYearMenu() const;
     
     // File operations
     void saveProductsToFile() const;
