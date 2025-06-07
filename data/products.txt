@@ -1,0 +1,4 @@
+101,nuoc 7UP,chai,10000,7
+103,nuoc coca,chai,10000,30
+102,nuoc coca,chai,10000,30
+100,Nuoc Fanta,chai,10000,30

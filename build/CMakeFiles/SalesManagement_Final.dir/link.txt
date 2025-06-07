@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\SalesManagement_Final.dir/objects.a
+D:\c++\ucrt64\bin\ar.exe qc CMakeFiles\SalesManagement_Final.dir/objects.a @CMakeFiles\SalesManagement_Final.dir\objects1.rsp
+D:\c++\ucrt64\bin\c++.exe  -Wall -Wextra -Wl,--whole-archive CMakeFiles\SalesManagement_Final.dir/objects.a -Wl,--no-whole-archive -o SalesManagement.exe -Wl,--out-implib,libSalesManagement.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SalesManagement_Final.dir\linkLibs.rsp

@@ -1,0 +1,36 @@
+SalesManagement/
+├── CMakeLists.txt
+├── main.cpp      # Chương trình chạy 
+├── data/           # Thư mục về dữ liệu của toàn bộ chương trình 
+├── log/            # Thư mục về Log của toàn bộ chương trình
+└── src/            # Lớp chứa những class và chức năng của chương trình
+    ├──ui/                      # Lớp chứa các thành phần giao diện
+    |  ├── console/             # Thư mục cho ConsoleUI
+    |  │   ├── ConsoleUI.h
+    |  │   └── ConsoleUI.cpp
+    |  └── menu/                # Thư mục cho Menu
+    |      ├── Menu.h
+    |      └── Menu.cpp
+    ├── models/                  # Lớp chứa các model
+    │   ├── product/             # Thư mục cho Product
+    │   │   ├── Product.h
+    │   │   └── Product.cpp
+    │   ├── invoice/             # Thư mục cho Invoice
+    │   │   ├── Invoice.h
+    │   │   └── Invoice.cpp
+    │   └── orderitem/           # Thư mục cho OrderItem
+    │       ├── OrderItem.h
+    │       └── OrderItem.cpp
+    ├──log/                      # Thư mục cho log 
+    |   ├── Logger.h
+    |   └── Logger.cpp
+    ├── persistence/             # Giữ nguyên: Chứa DataManager
+    │   ├── DataManager.h
+    │   └── DataManager.cpp
+    |
+    └── services/                # Giữ nguyên: Chứa SalesService
+        ├── SalesService.h
+        ├── SalesService.cpp
+        ├── SalesService_Invoice.cpp
+        ├── SalesService_Product.cpp
+        └── SalesService_Statistics.cpp
