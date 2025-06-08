@@ -1,0 +1,3 @@
+INVOICE,100
+ITEM,101,banh chocopie,20000,10
+ITEM,103,nuoc 7UP,15000,10

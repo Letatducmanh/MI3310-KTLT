@@ -1,0 +1,2 @@
+101,banh chocopie,hop,20000,10
+104,nuoc coca,chai,10000,30

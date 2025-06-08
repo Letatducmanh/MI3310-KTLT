@@ -1,0 +1,3 @@
+104,nuoc coca,chai,10000,30
+105,,chai,10000,
+103,nuoc Fanta,chai,15000,40

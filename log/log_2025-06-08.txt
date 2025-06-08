@@ -1,0 +1,179 @@
+[2025-06-08 01:52:34] [INFO] He thong Log da san sang.
+[2025-06-08 01:52:34] [INFO] Chuong trinh khoi dong.
+[2025-06-08 01:52:34] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 01:53:50] [INFO] He thong Log da san sang.
+[2025-06-08 01:53:50] [INFO] Chuong trinh khoi dong.
+[2025-06-08 01:53:50] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 01:53:54] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 01:53:54] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 01:53:57] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 02:03:44] [INFO] He thong Log da san sang.
+[2025-06-08 02:03:44] [INFO] Chuong trinh khoi dong.
+[2025-06-08 02:03:44] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 02:12:02] [INFO] He thong Log da san sang.
+[2025-06-08 02:12:02] [INFO] Chuong trinh khoi dong.
+[2025-06-08 02:12:02] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 02:13:29] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 02:13:29] [INFO] Chuong trinh ket thuc.
+[2025-06-08 02:17:22] [INFO] He thong Log da san sang.
+[2025-06-08 02:17:22] [INFO] Chuong trinh khoi dong.
+[2025-06-08 02:17:22] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 02:17:23] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 02:17:23] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 02:17:25] [INFO] Menu San Pham: Nguoi dung chon chuc nang 4
+[2025-06-08 02:17:27] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 02:17:28] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 02:17:28] [INFO] Chuong trinh ket thuc.
+[2025-06-08 02:23:03] [INFO] He thong Log da san sang.
+[2025-06-08 02:23:03] [INFO] Chuong trinh khoi dong.
+[2025-06-08 02:23:03] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 02:23:16] [INFO] Menu Chinh: Nguoi dung chon chuc nang 3
+[2025-06-08 02:23:16] [INFO] Truy cap Menu Bao Cao Thong Ke.
+[2025-06-08 02:23:21] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 02:23:21] [INFO] Chuong trinh ket thuc.
+[2025-06-08 02:23:44] [INFO] He thong Log da san sang.
+[2025-06-08 02:23:44] [INFO] Chuong trinh khoi dong.
+[2025-06-08 02:23:44] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 02:23:45] [INFO] Menu Chinh: Nguoi dung chon chuc nang 3
+[2025-06-08 02:23:45] [INFO] Truy cap Menu Bao Cao Thong Ke.
+[2025-06-08 02:23:48] [INFO] Thuc hien bao cao doanh thu theo ngay: 12
+[2025-06-08 02:23:58] [INFO] Thuc hien bao cao doanh thu theo thang: hkahdsk
+[2025-06-08 02:24:03] [INFO] Thuc hien bao cao doanh thu theo thang: 06
+[2025-06-08 02:41:23] [INFO] He thong Log da san sang.
+[2025-06-08 02:41:23] [INFO] Chuong trinh khoi dong.
+[2025-06-08 02:41:23] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 02:41:24] [INFO] Menu Chinh: Nguoi dung chon chuc nang 3
+[2025-06-08 02:41:24] [INFO] Truy cap Menu Bao Cao Thong Ke.
+[2025-06-08 02:41:47] [INFO] Thuc hien bao cao doanh thu theo ngay: 34/05/2025
+[2025-06-08 02:59:07] [INFO] Thuc hien bao cao doanh thu theo ngay: 03/06/2025
+[2025-06-08 02:59:17] [INFO] Menu Chinh: Nguoi dung chon chuc nang 2
+[2025-06-08 02:59:17] [INFO] Truy cap Menu Quan Ly Hoa Don.
+[2025-06-08 02:59:20] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 2
+[2025-06-08 02:59:23] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 0
+[2025-06-08 02:59:25] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 02:59:25] [INFO] Chuong trinh ket thuc.
+[2025-06-08 03:13:58] [INFO] He thong Log da san sang.
+[2025-06-08 03:13:58] [INFO] Chuong trinh khoi dong.
+[2025-06-08 03:13:58] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 03:14:40] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 03:14:40] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 03:16:57] [INFO] Menu San Pham: Nguoi dung chon chuc nang 1
+[2025-06-08 03:17:33] [INFO] Them san pham thanh cong. ID: 10000, Ten: ncac
+[2025-06-08 03:17:36] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 03:17:37] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 03:17:37] [INFO] Chuong trinh ket thuc.
+[2025-06-08 03:18:21] [INFO] He thong Log da san sang.
+[2025-06-08 03:18:21] [INFO] Chuong trinh khoi dong.
+[2025-06-08 03:18:21] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 03:18:43] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 03:18:43] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 03:18:45] [INFO] Menu San Pham: Nguoi dung chon chuc nang 1
+[2025-06-08 03:18:59] [INFO] Them san pham thanh cong. ID: 100, Ten: nuoc coca
+[2025-06-08 03:22:08] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 03:22:09] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 03:22:09] [INFO] Chuong trinh ket thuc.
+[2025-06-08 03:46:47] [INFO] He thong Log da san sang.
+[2025-06-08 03:46:47] [INFO] Chuong trinh khoi dong.
+[2025-06-08 03:46:47] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 03:47:38] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 03:47:38] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 03:47:40] [INFO] Menu San Pham: Nguoi dung chon chuc nang 4
+[2025-06-08 03:48:15] [INFO] Menu San Pham: Nguoi dung chon chuc nang 1
+[2025-06-08 03:48:37] [INFO] Them san pham thanh cong. ID: 101, Ten: banh chocopie
+[2025-06-08 03:49:37] [INFO] Menu San Pham: Nguoi dung chon chuc nang 1
+[2025-06-08 03:50:56] [INFO] Them san pham thanh cong. ID: 103, Ten: nuoc 7UP
+[2025-06-08 03:54:56] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 03:54:58] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 03:54:58] [INFO] Chuong trinh ket thuc.
+[2025-06-08 09:29:25] [INFO] He thong Log da san sang.
+[2025-06-08 09:29:25] [INFO] Chuong trinh khoi dong.
+[2025-06-08 09:29:25] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 09:29:34] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 09:29:34] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 09:30:13] [INFO] Menu San Pham: Nguoi dung chon chuc nang 4
+[2025-06-08 09:30:17] [INFO] Menu San Pham: Nguoi dung chon chuc nang 5
+[2025-06-08 09:31:20] [INFO] Menu San Pham: Nguoi dung chon chuc nang 2
+[2025-06-08 09:31:57] [INFO] Sua san pham thanh cong. ID: 100
+[2025-06-08 09:37:53] [INFO] Menu San Pham: Nguoi dung chon chuc nang 2
+[2025-06-08 09:38:00] [INFO] Sua san pham THAT BAI. Khong tim thay ID: ncakch
+[2025-06-08 09:38:06] [INFO] Menu San Pham: Nguoi dung chon chuc nang 2
+[2025-06-08 09:38:41] [INFO] Sua san pham thanh cong. ID: 101
+[2025-06-08 09:40:37] [INFO] Menu San Pham: Nguoi dung chon chuc nang 3
+[2025-06-08 09:40:56] [INFO] Xoa san pham thanh cong. ID: 102
+[2025-06-08 11:11:20] [INFO] Menu San Pham: Nguoi dung chon chuc nang 3
+[2025-06-08 11:11:24] [INFO] Xoa san pham THAT BAI. Khong tim thay ID: bcnahcascj
+[2025-06-08 11:11:30] [INFO] Xoa san pham THAT BAI. Khong tim thay ID: njcjabscjabsc
+[2025-06-08 11:14:15] [INFO] Menu San Pham: Nguoi dung chon chuc nang 4
+[2025-06-08 11:16:59] [INFO] Menu San Pham: Nguoi dung chon chuc nang 5
+[2025-06-08 11:35:07] [INFO] Menu San Pham: Nguoi dung chon chuc nang 6
+[2025-06-08 11:35:24] [INFO] Thuc hien import tu file 'mncahcsn.txt '. Ket qua - Them: 0, Trung: 0, Loi: 0
+[2025-06-08 11:35:37] [INFO] Menu San Pham: Nguoi dung chon chuc nang 6
+[2025-06-08 11:35:49] [INFO] Thuc hien import tu file 'products1.txt'. Ket qua - Them: 1, Trung: 1, Loi: 1
+[2025-06-08 11:40:48] [INFO] Menu San Pham: Nguoi dung chon chuc nang 4
+[2025-06-08 11:44:43] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 11:44:44] [INFO] Menu Chinh: Nguoi dung chon chuc nang 2
+[2025-06-08 11:44:44] [INFO] Truy cap Menu Quan Ly Hoa Don.
+[2025-06-08 11:46:11] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 1
+[2025-06-08 11:47:16] [INFO] Tao hoa don moi thanh cong. ID: 1000, Tong tien: 350000.000000
+[2025-06-08 11:47:45] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 1
+[2025-06-08 11:48:56] [INFO] Tao hoa don moi thanh cong. ID: 100, Tong tien: 350000.000000
+[2025-06-08 11:53:58] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 1
+[2025-06-08 11:55:17] [INFO] He thong Log da san sang.
+[2025-06-08 11:55:17] [INFO] Chuong trinh khoi dong.
+[2025-06-08 11:55:17] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 11:55:18] [INFO] Menu Chinh: Nguoi dung chon chuc nang 2
+[2025-06-08 11:55:18] [INFO] Truy cap Menu Quan Ly Hoa Don.
+[2025-06-08 11:55:19] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 1
+[2025-06-08 11:58:20] [INFO] Huy tao hoa don do khong co san pham.
+[2025-06-08 12:14:12] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 2
+[2025-06-08 12:15:40] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 3
+[2025-06-08 12:15:54] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 3
+[2025-06-08 12:19:17] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 0
+[2025-06-08 12:19:31] [INFO] Menu Chinh: Nguoi dung chon chuc nang 3
+[2025-06-08 12:19:31] [INFO] Truy cap Menu Bao Cao Thong Ke.
+[2025-06-08 12:40:16] [INFO] Thuc hien bao cao doanh thu theo ngay: 04/06/2025
+[2025-06-08 12:40:48] [INFO] Thuc hien bao cao doanh thu theo ngay: 04/06/2025
+[2025-06-08 12:41:01] [INFO] Thuc hien bao cao doanh thu theo ngay: 06/06/2025
+[2025-06-08 12:41:57] [INFO] Thuc hien bao cao doanh thu theo ngay: 06/06/2025
+[2025-06-08 12:50:36] [INFO] Thuc hien bao cao doanh thu theo thang: 04/2025
+[2025-06-08 12:52:10] [INFO] Thuc hien bao cao doanh thu theo thang: 04/2025
+[2025-06-08 12:52:26] [INFO] Thuc hien bao cao doanh thu theo thang: 06/062025
+[2025-06-08 12:52:49] [INFO] Thuc hien bao cao doanh thu theo thang: 06/2025
+[2025-06-08 12:55:22] [INFO] Thuc hien bao cao doanh thu theo nam: 2024
+[2025-06-08 12:55:28] [INFO] Thuc hien bao cao doanh thu theo nam: 2025
+[2025-06-08 12:55:44] [INFO] Thuc hien bao cao doanh thu theo nam: 2025
+[2025-06-08 12:58:40] [INFO] Thuc hien bao cao doanh thu san pham theo thang: 04/2025dadv
+[2025-06-08 12:58:51] [INFO] Thuc hien bao cao doanh thu san pham theo thang: 05/2025
+[2025-06-08 12:59:10] [INFO] Thuc hien bao cao doanh thu san pham theo thang: 06/2025
+[2025-06-08 13:07:26] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 13:07:26] [INFO] Chuong trinh ket thuc.
+[2025-06-08 13:07:43] [INFO] He thong Log da san sang.
+[2025-06-08 13:07:43] [INFO] Chuong trinh khoi dong.
+[2025-06-08 13:07:43] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 13:07:48] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 13:07:48] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 13:07:49] [INFO] Menu San Pham: Nguoi dung chon chuc nang 4
+[2025-06-08 13:07:55] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 13:07:57] [INFO] Menu Chinh: Nguoi dung chon chuc nang 3
+[2025-06-08 13:07:57] [INFO] Truy cap Menu Bao Cao Thong Ke.
+[2025-06-08 13:08:01] [INFO] Thuc hien bao cao doanh thu san pham theo thang: 06/2025
+[2025-06-08 13:08:08] [INFO] Menu Chinh: Nguoi dung chon chuc nang 1
+[2025-06-08 13:08:08] [INFO] Truy cap Menu Quan Ly San Pham.
+[2025-06-08 13:08:09] [INFO] Menu San Pham: Nguoi dung chon chuc nang 3
+[2025-06-08 13:08:13] [INFO] Xoa san pham thanh cong. ID: 103
+[2025-06-08 13:08:23] [INFO] Menu San Pham: Nguoi dung chon chuc nang 0
+[2025-06-08 13:08:25] [INFO] Menu Chinh: Nguoi dung chon chuc nang 3
+[2025-06-08 13:08:25] [INFO] Truy cap Menu Bao Cao Thong Ke.
+[2025-06-08 13:08:28] [INFO] Thuc hien bao cao doanh thu san pham theo thang: 06/2025
+[2025-06-08 13:18:59] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 13:18:59] [INFO] Chuong trinh ket thuc.
+[2025-06-08 22:13:15] [INFO] He thong Log da san sang.
+[2025-06-08 22:13:15] [INFO] Chuong trinh khoi dong.
+[2025-06-08 22:13:15] [INFO] Tai du lieu ban dau thanh cong.
+[2025-06-08 22:13:17] [INFO] Menu Chinh: Nguoi dung chon chuc nang 2
+[2025-06-08 22:13:17] [INFO] Truy cap Menu Quan Ly Hoa Don.
+[2025-06-08 22:13:19] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 2
+[2025-06-08 22:13:21] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 3
+[2025-06-08 22:13:27] [INFO] Menu Hoa Don: Nguoi dung chon chuc nang 0
+[2025-06-08 22:13:28] [INFO] Menu Chinh: Nguoi dung chon chuc nang 0
+[2025-06-08 22:13:28] [INFO] Chuong trinh ket thuc.
